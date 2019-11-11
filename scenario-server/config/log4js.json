@@ -1,0 +1,17 @@
+{
+  "appenders": {
+    "appLogs": {
+      "type": "dateFile",
+      "filename": "logs/app.log",
+      "pattern": ".yyyy-MM-dd"
+    },
+    "console": {
+      "type": "console"
+    }
+  },
+  "categories": {
+    "app": { "appenders": ["console", "appLogs"], "level": "debug" },
+    "default": { "appenders": ["console", "appLogs"], "level": "trace" },
+    "test": { "appenders": ["console", "appLogs"], "level": "info" }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "AIsenpai-UI",
+  "dockerComposeFile": ["../../docker-compose.yml"],
+  "service": "ui",
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace/ui",
+  "appPort": ["2222:8000", "3333:8080"],
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "octref.vetur"
+  ],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": false,
+    "prettier.eslintIntegration": true,
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2
+    },
+    "eslint.validate": [
+      {
+        "language": "vue",
+        "autoFix": true
+      },
+      {
+        "language": "javascript",
+        "autoFix": true
+      }
+    ],
+    "eslint.autoFixOnSave": true,
+    "vetur.format.defaultFormatter.js": "prettier-eslint"
+  }
+}
