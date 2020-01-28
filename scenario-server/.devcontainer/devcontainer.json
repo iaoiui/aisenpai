@@ -1,16 +1,15 @@
 {
   "name": "AIsenpai-Scenario-Server",
   "dockerComposeFile": ["../../docker-compose.yml"],
-  "service": "server",
+  "service": "scenario-server",
   "shutdownAction": "none",
-  "workspaceFolder": "/workspace/server",
-  "appPort": "4444:3000",
+  "workspaceFolder": "/workspace/scenario-server",
   "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash",
     "editor.formatOnSave": true,
     "editor.detectIndentation": false,
-    "prettier.eslintIntegration": true,
+    // "prettier.eslintIntegration": true,
     "[html]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.tabSize": 2
@@ -27,12 +26,8 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.tabSize": 2
     },
-    "eslint.validate": [
-      {
-        "language": "javascript",
-        "autoFix": true
-      }
-    ],
-    "eslint.autoFixOnSave": true
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
   }
 }

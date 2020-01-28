@@ -1,0 +1,13 @@
+{
+  "name": "AIsenpai-API-Server",
+  "dockerComposeFile": ["../../docker-compose.yml"],
+  "service": "api-server",
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace/api-server",
+  "extensions": ["ms-python.python"],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": false
+  }
+}
