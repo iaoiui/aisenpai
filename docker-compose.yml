@@ -23,7 +23,17 @@ services:
       - "14444:3000"
     environment:
       - LOG4J_CONFIG_FILE=config/log4js.json
-  # api-server:
+  api-server:
+    build:
+      context: ./api-server/.devcontainer
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace
+      - aisenpai-api-server:/root/.vscode-server
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    ports:
+      - "15555:5000"
 volumes:
   aisenpai-ui:
   aisenpai-scenario-server:
+  aisenpai-api-server:

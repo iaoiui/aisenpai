@@ -1,25 +1,17 @@
 const express = require('express')
 const router = express.Router()
-const uuidv4 = require('uuid/v4')
+const Logger = require('../common/logger')
 
-router.get('/test', (req, res, next) => {
-  const uuid = uuidv4()
-  global.logger.info(`${uuid} start GET /test`)
+router.post('/logger', (req, res, next) => {
+  Logger.getLogger().info('start POST /logger')
   try {
-    res.send(uuid)
+    Logger.getLogger().info(req.body)
+    res.end()
   } catch (e) {
-    global.logger.error(`${uuid} error`)
-    const errObj = {
-      code: 'E000001',
-      msg: e,
-      id: uuid
-    }
-    global.logger.error(`${uuid} ${errObj.code}`)
-    global.logger.error(`${uuid} ${errObj.msg}`)
-    global.logger.error(`${uuid} ${errObj.id}`)
-    res.status(500).send(errObj)
+    Logger.getLogger().error(e)
+    res.status(500).end()
   } finally {
-    global.logger.info(`${uuid} end GET /test`)
+    Logger.getLogger().info('end POST /logger')
   }
 })
 

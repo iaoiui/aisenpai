@@ -6,9 +6,9 @@ const helmet = require('helmet')
 
 const indexRouter = require('./routes/index')
 
-const appLogger = require('./logger')
-global.logger = appLogger
-appLogger.info('Server Start')
+require('./common/common_text')
+const Logger = require('./common/logger')
+Logger.getLogger().info('Server Start')
 
 const app = express()
 
