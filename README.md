@@ -10,7 +10,7 @@ AIを搭載した新人教育対話システム。
 1. 新しいウィンドウでRemote-Containers: Open Folder in Container...で`api-server`を選択
 1. `ui`コンテナと`scenario-server`コンテナそれぞれで`npm i`
 1. `api-server`コンテナで`pip install -r requirements.txt`
-1. `ui`コンテナの中で`vue ui --H 0.0.0.0`  
+1. `ui`コンテナの中で`vue ui -H 0.0.0.0`  
 Vue CLI UIが`localhost:12222`で参照可能
 1. UIを操作してdevサーバを起動  
     1. インポート
