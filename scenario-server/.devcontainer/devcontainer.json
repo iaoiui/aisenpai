@@ -8,26 +8,26 @@
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash",
     "editor.formatOnSave": true,
-    "editor.detectIndentation": false,
+    "editor.detectIndentation": false
     // "prettier.eslintIntegration": true,
-    "[html]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.tabSize": 2
-    },
-    "[css]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.tabSize": 2
-    },
-    "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.tabSize": 2
-    },
-    "[json]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.tabSize": 2
-    },
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    }
+    // "[html]": {
+    //   "editor.defaultFormatter": "esbenp.prettier-vscode",
+    //   "editor.tabSize": 2
+    // },
+    // "[css]": {
+    //   "editor.defaultFormatter": "esbenp.prettier-vscode",
+    //   "editor.tabSize": 2
+    // },
+    // "[javascript]": {
+    //   "editor.defaultFormatter": "esbenp.prettier-vscode",
+    //   "editor.tabSize": 2
+    // },
+    // "[json]": {
+    //   "editor.defaultFormatter": "esbenp.prettier-vscode",
+    //   "editor.tabSize": 2
+    // },
+    // "editor.codeActionsOnSave": {
+    //   "source.fixAll.eslint": true
+    // }
   }
 }

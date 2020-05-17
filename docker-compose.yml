@@ -29,11 +29,11 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/workspace
-    #   - aisenpai-api-server:/root/.vscode-server
+      - aisenpai-api-server:/root/.vscode-server
     command: /bin/sh -c "while sleep 1000; do :; done"
     ports:
       - "15555:5000"
 volumes:
   aisenpai-ui:
   aisenpai-scenario-server:
-#   aisenpai-api-server:
+  aisenpai-api-server:

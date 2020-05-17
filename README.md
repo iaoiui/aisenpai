@@ -21,11 +21,14 @@ Vue CLI UIが`localhost:12222`で参照可能
     1. ホストの指定→0.0.0.0
     1. 保存
     1. タスクの実行  
-フロントエンドのVueのdevサーバが`https://localhost:13333`で参照可能
-1. `scenario-server`コンテナの中で`node bin/www`  
-1. `api-server`コンテナの中で`python app.py`  
+フロントエンドのVueのdevサーバが`localhost:13333`で参照可能
+1. `scenario-server`コンテナの中で`node bin/www.js`あるいはF5  
+1. `api-server`コンテナの中で`python app.py`あるいはF5
 
-バックエンドのExpressサーバは`localhost:14444`で参照可能
-テキスト分析のFlaskサーバは`localhost:15555`で参照可能
+バックエンドのExpressサーバは`localhost:14444`で参照可能。
+テキスト分析のFlaskサーバは`localhost:15555`で参照可能。
+
+## 本番
 
 
+## 使用方法
