@@ -21,8 +21,6 @@ services:
     command: /bin/sh -c "while sleep 1000; do :; done"
     ports:
       - "14444:3000"
-    environment:
-      - LOG4J_CONFIG_FILE=config/log4js.json
   api-server:
     build:
       context: ./api-server/.devcontainer
