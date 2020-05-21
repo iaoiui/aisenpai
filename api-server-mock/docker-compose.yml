@@ -5,4 +5,4 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - "./data.json:/db.json"
+      - "./data.json:/data/db.json"
