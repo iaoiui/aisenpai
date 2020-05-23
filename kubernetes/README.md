@@ -8,12 +8,18 @@ Install kind:  https://github.com/kubernetes-sigs/kind
 
 ## Run
 
-コンテナの起動
+クラスタとアプリケーションの実行
 
 ```
-sh quickstart.sh
+./quickstart.sh
 ```
 
 ブラウザでhttp://localhost:3000を確認
 
+## Cleanup
 
+クラスタの削除
+
+```
+./cleanup.sh
+```
