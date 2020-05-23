@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: paisen
+  name: paisen
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: paisen
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: paisen
+    spec:
+      containers:
+      - image: iaoiui0727/paisen
+        name: paisen
+        resources: {}
+status: {}

@@ -21,11 +21,15 @@ app.set('port', port)
 
 var server = http.createServer(app)
 
-/**
- * Create Socket.IO server.
- */
+// /**
+//  * Create Socket.IO server.
+//  */
 
-var io = require('socket.io')(server)
+// module.export = require('socket.io')(server)
+// app.get('io').attach(server)
+var socketApi = require('../routes/socketio')
+var io = socketApi.io
+io.attach(server)
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -35,14 +39,16 @@ server.listen(port)
 server.on('error', onError)
 server.on('listening', onListening)
 
-/**
- * Listen on Socket.IO
- */
+// /**
+//  * Listen on Socket.IO
+//  */
 
-const callbackSocketIO = require('../routes/socket')
-io.of('/socket.io').on('connection', socket => {
-  callbackSocketIO(socket)
-})
+// app.io.attach(server)
+
+// const callbackSocketIO = require('../routes/socket')
+// io.of('/socket.io').on('connection', socket => {
+//   callbackSocketIO(socket)
+// })
 
 /**
  * Normalize a port into a number, string, or false.
