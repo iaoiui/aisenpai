@@ -7,10 +7,6 @@ RUN npm run build
 
 FROM node:12-alpine
 
-ENV APP_DIR=/opt/app
-
-ENV LOG4J_CONFIG_FILE=config/log4js.json
-
 RUN mkdir -p ${APP_DIR}
 
 # mylti stage build
