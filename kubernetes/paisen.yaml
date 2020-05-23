@@ -20,5 +20,24 @@ spec:
       containers:
       - image: iaoiui0727/paisen
         name: paisen
+        ports:
+        - containerPort: 3000
         resources: {}
 status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: paisen
+  name: paisen
+spec:
+  ports:
+  - port: 13333
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: paisen
+status:
+  loadBalancer: {}
