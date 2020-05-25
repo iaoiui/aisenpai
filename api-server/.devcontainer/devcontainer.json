@@ -4,7 +4,7 @@
   "service": "api-server",
   "shutdownAction": "none",
   "workspaceFolder": "/workspace/api-server",
-  "extensions": ["ms-python.python"],
+  "extensions": ["ms-python.python", "eamodio.gitlens", "mhutchie.git-graph"],
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash",
     "editor.formatOnSave": true

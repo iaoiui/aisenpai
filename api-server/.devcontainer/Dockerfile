@@ -35,5 +35,5 @@ RUN cd jumanpp-1.02 && ./configure && make && make install
 
 WORKDIR $project_dir
 RUN rm -rf $project_dir
-
+ 
 ENV DEBIAN_FRONTEND=dialog
