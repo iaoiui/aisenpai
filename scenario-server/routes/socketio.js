@@ -23,28 +23,32 @@ io.of('/socket.io').on('connection', (socket) => {
       socket.emit('message', global.WAIT_MESSAGE)
 
       // 検索クエリを投げかけて関連記事を得る
-      const title = await axios.get('http://api-server:5000/sentence', {
-        params: { sentence: msg }
-      })
-      Logger.getLogger().info(title.data.title)
+      const title = await axios.get(
+        `http://api-server:${process.env.APISERVER_PORT}/sentence`,
+        { params: { sentence: msg } }
+      )
+      console.log(title.data.title)
 
       // 記事本文を得る
-      const body = await axios.get('http://api-server:5000/qiita', {
-        params: { sentence: title.data.title }
-      })
-      Logger.getLogger().info(body.data.body)
+      const body = await axios.get(
+        `http://api-server:${process.env.APISERVER_PORT}/qiita`,
+        { params: { sentence: title.data.title } }
+      )
+      console.log(body.data.body)
 
       // 記事要約
-      const summary = axios.get('http://api-server:5000/summary', {
-        params: { sentence: body.data.body }
-      })
-      Logger.getLogger().info(summary)
+      const summary = axios.get(
+        `http://api-server:${process.env.APISERVER_PORT}/summary`,
+        { params: { sentence: body.data.body } }
+      )
+      console.log(summary)
 
       // 関連単語取得
-      const words = axios.get('http://api-server:5000/word', {
-        params: { sentence: msg, useDictionary: true }
-      })
-      Logger.getLogger().info(words)
+      const words = axios.get(
+        `http://api-server:${process.env.APISERVER_PORT}/word`,
+        { params: { sentence: msg, useDictionary: true } }
+      )
+      console.log(words)
 
       const p = await Promise.all([summary, words])
 
