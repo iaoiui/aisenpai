@@ -1,13 +1,17 @@
 {
   "name": "AIsenpai-UI",
-  "dockerComposeFile": ["../../docker-compose.yml"],
+  "dockerComposeFile": [
+    "../../docker-compose.yml"
+  ],
   "service": "ui",
   "shutdownAction": "none",
   "workspaceFolder": "/workspace/ui",
   "extensions": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "octref.vetur"
+    "octref.vetur",
+    "eamodio.gitlens",
+    "mhutchie.git-graph"
   ],
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash",
@@ -33,6 +37,9 @@
     // "editor.codeActionsOnSave": {
     //   "source.fixAll.eslint": true
     // },
-    "vetur.format.defaultFormatter.js": "prettier-eslint"
+    "vetur.format.defaultFormatter.js": "prettier-eslint",
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
   }
 }
