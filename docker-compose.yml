@@ -32,6 +32,8 @@ services:
     command: /bin/sh -c "while sleep 1000; do :; done"
     ports:
       - "15555:5000"
+    environment:
+      - ENVIRONMENT=development
 volumes:
   ui-extensions:
   scenario-server-extensions:
