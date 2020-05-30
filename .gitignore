@@ -171,3 +171,6 @@ typings/
 
 # etc
 .DS_Store
+
+# huge files
+api-server/resources
