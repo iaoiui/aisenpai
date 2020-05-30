@@ -1,7 +1,8 @@
-'''APIサーバのエントリーポイント'''
+"""APIサーバのエントリーポイント"""
 from flask import Flask
 from srcs.controllers import related_terms_controller
-from srcs.controllers import article_search_controller
+
+# from srcs.controllers import article_search_controller
 # from flask.logging import create_logger
 # import json
 # from distutils.util import strtobool
@@ -14,10 +15,10 @@ from srcs.controllers import article_search_controller
 
 
 app = Flask(__name__)
+
+# ルーティング設定
 app.register_blueprint(related_terms_controller.app)
 # app.register_blueprint(article_search_controller.app)
-
-# logger = create_logger(app)
 
 
 # # 入力文章に似た文章の獲得
@@ -142,6 +143,6 @@ app.register_blueprint(related_terms_controller.app)
 #     return jsonify({'body': 'mock_content'})
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.debug = True
-    app.run(host='0.0.0.0')
+    app.run(host="0.0.0.0")

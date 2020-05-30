@@ -1,18 +1,28 @@
+"""関連語を導出するモデル"""
+from pathlib import Path
 from gensim.models.fasttext import FastText
-import os
+from flask import current_app
 
 
-class fastTextWrapper():
+class FasttextWrapper:
+    """
+    関連語を導出するモデルクラス
+    """
+
     def __init__(self):
-        self.sg_model = FastText.load(os.path.dirname(
-            os.path.abspath(__file__)) + '/fasttext_model/ft_sg.model')
-        # self.cbow_model = FastText.load('model/ft_cbow.model')
+        self.model_path = str(
+            Path(str(current_app.root_path)) / "resources/fasttext_model/ft_sg.model"
+        )
+        self.sg_model = FastText.load(self.model_path)
+        self.logger = current_app.logger
 
-    def get_similar_words(self, word, sg=1):
+    def get_similar_words(self, word):
+        """
+        関連語を導出するモデルクラス
+        """
         try:
             word_list = self.sg_model.wv.most_similar(positive=[word])
-            print(word_list)
             return word_list
-        except Exception as e:
-            print(e)
+        except Exception as error:
+            self.logger.error(error)
             return []
