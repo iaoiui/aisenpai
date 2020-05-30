@@ -21,6 +21,8 @@ services:
     command: /bin/sh -c "while sleep 1000; do :; done"
     ports:
       - "14444:3000"
+    environment:
+      - APISERVER_PORT=5000
   api-server:
     build:
       context: ./api-server/.devcontainer
