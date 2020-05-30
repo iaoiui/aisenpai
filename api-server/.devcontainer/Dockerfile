@@ -3,9 +3,9 @@ FROM python:3.7
 WORKDIR /workspace
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
-COPY poetry.lock /workspace
-COPY pyproject.toml /workspace
-RUN poetry install
+# COPY poetry.lock /workspace
+# COPY pyproject.toml /workspace
+# RUN poetry install
 
 
 # ENV DEBIAN_FRONTEND=noninteractive
