@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/workspace
-      - aisenpai-ui:/root/.vscode-server
+      - ui-extensions:/root/.vscode-server
     command: /bin/sh -c "while sleep 1000; do :; done"
     ports:
       - "12222:8000"
@@ -17,7 +17,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/workspace
-      - aisenpai-scenario-server:/root/.vscode-server
+      - scenario-server-extensions:/root/.vscode-server
     command: /bin/sh -c "while sleep 1000; do :; done"
     ports:
       - "14444:3000"
@@ -27,11 +27,13 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/workspace
-      - aisenpai-api-server:/root/.vscode-server
+      - api-server-extensions:/root/.vscode-server
+      # - api-server-dependencies:/usr/local/lib/python3.7/site-packages
     command: /bin/sh -c "while sleep 1000; do :; done"
     ports:
       - "15555:5000"
 volumes:
-  aisenpai-ui:
-  aisenpai-scenario-server:
-  aisenpai-api-server:
+  ui-extensions:
+  scenario-server-extensions:
+  api-server-extensions:
+  # api-server-dependencies:
