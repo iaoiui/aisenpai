@@ -29,6 +29,7 @@ def get_synonym():
 
 # TODO 高速化
 def get_synonym_core(noun_list, response):
+  # fastTextで意味の近い単語を抽出
   ft = FasttextWrapper()
   for noun in noun_list:
       similar_words = ft.get_similar_words(noun.lower())
