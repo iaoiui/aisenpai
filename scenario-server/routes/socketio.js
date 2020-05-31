@@ -22,40 +22,42 @@ io.of('/socket.io').on('connection', (socket) => {
       // 時間がかかった時用のクッションメッセージ
       socket.emit('message', global.WAIT_MESSAGE)
 
-      // 検索クエリを投げかけて関連記事を得る
-      const title = await axios.get(
-        `http://api-server:${process.env.APISERVER_PORT}/sentence`,
-        { params: { sentence: msg } }
-      )
-      console.log(title.data.title)
+      // // 検索クエリを投げかけて関連記事を得る
+      // const title = await axios.get(
+      //   `http://api-server:${process.env.APISERVER_PORT}/sentence`,
+      //   { params: { sentence: msg } }
+      // )
+      // console.log(title.data.title)
 
-      // 記事本文を得る
-      const body = await axios.get(
-        `http://api-server:${process.env.APISERVER_PORT}/qiita`,
-        { params: { sentence: title.data.title } }
-      )
-      console.log(body.data.body)
+      // // 記事本文を得る
+      // const body = await axios.get(
+      //   `http://api-server:${process.env.APISERVER_PORT}/qiita`,
+      //   { params: { sentence: title.data.title } }
+      // )
+      // console.log(body.data.body)
 
-      // 記事要約
-      const summary = axios.get(
-        `http://api-server:${process.env.APISERVER_PORT}/summary`,
-        { params: { sentence: body.data.body } }
-      )
-      console.log(summary)
+      // // 記事要約
+      // const summary = axios.get(
+      //   `http://api-server:${process.env.APISERVER_PORT}/summary`,
+      //   { params: { sentence: body.data.body } }
+      // )
+      // console.log(summary)
 
       // 関連単語取得
       const words = axios.get(
-        `http://api-server:${process.env.APISERVER_PORT}/word`,
-        { params: { sentence: msg, useDictionary: true } }
+        `http://api-server:${process.env.APISERVER_PORT}/api/v1/synonym`,
+        // { params: { sentence: msg, useDictionary: true } }
+        { params: { sentence: msg } }
       )
       console.log(words)
 
-      const p = await Promise.all([summary, words])
+      const p = await Promise.all([words])
+      // const p = await Promise.all([summary, words])
 
       const result = {
-        summary: p[0].data.body,
-        words: p[1].data.words,
-        title: title.data.title,
+        // summary: p[0].data.body,
+        words: p[0].data.words,
+        title: 'mock title',
         url: ''
       }
 

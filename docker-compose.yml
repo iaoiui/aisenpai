@@ -21,8 +21,6 @@ services:
     command: /bin/sh -c "while sleep 1000; do :; done"
     ports:
       - "14444:3000"
-    environment:
-      - APISERVER_PORT=5000
   api-server:
     build:
       context: ./api-server/.devcontainer
@@ -34,10 +32,15 @@ services:
     command: /bin/sh -c "while sleep 1000; do :; done"
     ports:
       - "15555:5000"
+  etcd:
+    image: bitnami/etcd:3
     environment:
-      - ENVIRONMENT=development
+      - ALLOW_NONE_AUTHENTICATION=yes
+    volumes:
+      - etcd_data:/bitnami/etcd
 volumes:
   ui-extensions:
   scenario-server-extensions:
   api-server-extensions:
+  etcd_data:
   # api-server-dependencies:

@@ -1,6 +1,7 @@
 """APIサーバのエントリーポイント"""
 from flask import Flask
 from srcs.controllers import related_terms_controller
+from srcs.controllers import cache_controller
 
 # from srcs.controllers import article_search_controller
 # from flask.logging import create_logger
@@ -18,6 +19,7 @@ app = Flask(__name__)
 
 # ルーティング設定
 app.register_blueprint(related_terms_controller.app)
+app.register_blueprint(cache_controller.app)
 # app.register_blueprint(article_search_controller.app)
 
 
