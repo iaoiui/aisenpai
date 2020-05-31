@@ -4,7 +4,7 @@ WORKDIR /workspace
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
 # COPY poetry.lock /workspace
-# COPY pyprojecy.toml /workspace
+# COPY pyproject.toml /workspace
 # RUN poetry install
 
 
